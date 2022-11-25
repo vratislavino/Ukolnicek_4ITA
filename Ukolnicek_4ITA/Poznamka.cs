@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ukolnicek_4ITA
 {
+    [Serializable]
     public class Poznamka
     {
         public string nadpis;
