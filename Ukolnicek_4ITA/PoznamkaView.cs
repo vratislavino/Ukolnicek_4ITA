@@ -16,6 +16,7 @@ namespace Ukolnicek_4ITA
         public event Action<Poznamka> DetailsRequested;
 
         Poznamka poznamka;
+        public Poznamka Poznamka => poznamka;
 
         public PoznamkaView(Poznamka p = null)
         {
@@ -25,6 +26,14 @@ namespace Ukolnicek_4ITA
                 casLabel.Text = p.cas.ToString();
                 poznamka = p;
             }
+        }
+
+        public void OznacPoznamku() {
+            BackColor = Color.LightSkyBlue;
+        }
+
+        public void OdoznacPoznamku() {
+            BackColor = Color.White;
         }
 
         private void deleteButton_Click(object sender, EventArgs e) {

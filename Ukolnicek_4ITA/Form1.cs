@@ -90,6 +90,16 @@ namespace Ukolnicek_4ITA
             nadpisLabel.Text = pozn.nadpis;
             casLabel.Text = pozn.cas.ToString();
             textLabel.Text = pozn.text;
+
+            for(int i = 0; i < flowLayoutPanel1.Controls.Count; i++) {
+                if (flowLayoutPanel1.Controls[i] is PoznamkaView) {
+                    var view = ((PoznamkaView) flowLayoutPanel1.Controls[i]);
+                    if(view.Poznamka == pozn)
+                        view.OznacPoznamku();
+                    else
+                        view.OdoznacPoznamku();
+                }
+            }
         }
     }
 }
