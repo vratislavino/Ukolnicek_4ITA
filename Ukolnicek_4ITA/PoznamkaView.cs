@@ -12,7 +12,8 @@ namespace Ukolnicek_4ITA
 {
     public partial class PoznamkaView : UserControl
     {
-        public event Action<Poznamka> DeleteRequested;
+        public event Action<Poznamka> DeleteRequested; 
+        public event Action<Poznamka> DetailsRequested;
 
         Poznamka poznamka;
 
@@ -28,6 +29,10 @@ namespace Ukolnicek_4ITA
 
         private void deleteButton_Click(object sender, EventArgs e) {
             DeleteRequested?.Invoke(poznamka);
+        }
+
+        private void PoznamkaView_Click(object sender, EventArgs e) {
+            DetailsRequested?.Invoke(poznamka);
         }
     }
 }

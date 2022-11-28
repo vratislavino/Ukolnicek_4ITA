@@ -44,6 +44,7 @@
             this.nadpisLabel.TabIndex = 0;
             this.nadpisLabel.Text = "Nadpis";
             this.nadpisLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nadpisLabel.Click += new System.EventHandler(this.PoznamkaView_Click);
             // 
             // casLabel
             // 
@@ -56,6 +57,7 @@
             this.casLabel.TabIndex = 1;
             this.casLabel.Text = "(čas přidání poznámky)";
             this.casLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.casLabel.Click += new System.EventHandler(this.PoznamkaView_Click);
             // 
             // deleteButton
             // 
@@ -79,6 +81,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PoznamkaView";
             this.Size = new System.Drawing.Size(690, 151);
+            this.Click += new System.EventHandler(this.PoznamkaView_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

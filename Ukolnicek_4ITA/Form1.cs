@@ -11,7 +11,9 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 
 namespace Ukolnicek_4ITA
-{
+{/*
+  https://github.com/vratislavino/Ukolnicek_4ITA.git
+  */
     public partial class Form1 : Form
     {
         string datapath = "poznamky.json";
@@ -52,7 +54,6 @@ namespace Ukolnicek_4ITA
             using (StreamWriter sw = new StreamWriter(datapath)) {
                 sw.Write(json);
             }
-
         }
 
         private void NactiPoznamky() {
@@ -74,6 +75,7 @@ namespace Ukolnicek_4ITA
                 PoznamkaView view = new PoznamkaView(poznamky[i]);
 
                 view.DeleteRequested += OnDeleteRequested;
+                view.DetailsRequested += OnDetailsRequested;
 
                 flowLayoutPanel1.Controls.Add(view);
             }
@@ -82,6 +84,12 @@ namespace Ukolnicek_4ITA
         private void OnDeleteRequested(Poznamka pozn) {
             poznamky.Remove(pozn);
             UpdateUI();
+        }
+
+        private void OnDetailsRequested(Poznamka pozn) {
+            nadpisLabel.Text = pozn.nadpis;
+            casLabel.Text = pozn.cas.ToString();
+            textLabel.Text = pozn.text;
         }
     }
 }
